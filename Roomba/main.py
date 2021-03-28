@@ -21,7 +21,7 @@ ev3 = EV3Brick()
 
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
-front_ultra = InfraredSensor(Port.S4)
+front_infrared = InfraredSensor(Port.S4)
 # front_ultra = UltrasonicSensor(Port.S4)
 # back_touch = TouchSensor(Port.S1)
 
@@ -36,11 +36,11 @@ while True:
     # Drive forward at 200 millimeters per second
     robot.drive(200, 0)
     
-    while front_ultra.distance() > 5:
+    while front_infrared.distance() > 5:
         wait(10)
         
     robot.straight(-300)
-    while front_ultra.distance() < 5:
+    while front_infrared.distance() < 5:
         wait(10)
 
     robot.turn(120)
