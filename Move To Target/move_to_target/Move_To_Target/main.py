@@ -37,5 +37,4 @@ arm.run_angle(300, 600, Stop.HOLD, True)
 
 robot.straight(-300)
 
-# Write your program here.
 ev3.speaker.beep()
